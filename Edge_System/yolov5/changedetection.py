@@ -4,9 +4,54 @@ import pathlib
 import requests
 from datetime import datetime
 
+objects_dict = {
+    "backpack": 20000, 
+    "umbrella": 5000,
+    "handbag": 30000, 
+    "tie": 10000, 
+    "suitcase": 50000, 
+    "frisbee": 5000, 
+    "sports ball": 6000, 
+    "kite": 5000, 
+    "baseball bat": 20000, 
+    "baseball glove": 50000, 
+    "tennis racket": 60000, 
+    "bottle": 4000,
+    "wine glass": 5500, 
+    "cup": 3000, 
+    "fork": 3000, 
+    "knife": 3000, 
+    "spoon": 2000, 
+    "bowl": 5000, 
+    "banana": 3000, 
+    "apple": 1000, 
+    "sandwich": 4000, 
+    "orange": 1500, 
+    "broccoli": 1000, 
+    "carrot": 1000, 
+    "hot dog": 3000, 
+    "pizza": 15000, 
+    "donut": 2500, 
+    "cake": 25000, 
+    "laptop": 300000, 
+    "mouse": 20000, 
+    "remote": 10000, 
+    "keyboard": 30000, 
+    "cell phone": 500000, 
+    "book": 10000, 
+    "clock": 9000, 
+    "vase": 9000, 
+    "scissors": 1500, 
+    "teddy bear": 10000, 
+    "hair dryer": 30000, 
+    "toothbrush": 2500
+}
+
+
+
 class ChangeDetection:
     result_prev = []
-    HOST = 'http://127.0.0.1:8000'
+    HOST = 'https://jtk.pythonanywhere.com' #'http://127.0.0.1:8000'
     username = 'jtk'
     password = 'admin'
     token = ''
@@ -31,9 +76,10 @@ class ChangeDetection:
         i = 0
         while i < len(self.result_prev):
             if self.result_prev[i]==0 and detected_current[i]==1 :
-                change_flag = 1
-                self.title = names[i]
-                self.text += names[i] + ", "
+                if names[i] in objects_dict:
+                    change_flag = 1
+                    self.title = names[i]
+                    self.text += names[i] + " : " + str(objects_dict[names[i]]) + " won, "
             i += 1
 
         self.result_prev = detected_current[:] # 객체 검출 상태 저장
