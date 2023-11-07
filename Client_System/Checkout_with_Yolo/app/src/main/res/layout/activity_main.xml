@@ -15,9 +15,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:adjustViewBounds="true"
+        android:layout_width="320dp"
+        android:layout_height="240dp"
+        android:layout_gravity="center"
         />
 
     <TextView
@@ -28,7 +28,7 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="250dp">
 
         <TextView
             android:id="@+id/textView"
@@ -46,12 +46,12 @@
     <Button
         android:id="@+id/button"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="결제" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:text="종료" />
 </LinearLayout>
