@@ -5,12 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".MainActivity">
+    tools:context=".PaymentActivity">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="장바구니"
+        android:text="결제용 QR코드"
         android:gravity="center" />
 
     <ImageView
@@ -23,31 +23,11 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="-구매 목록-"
+        android:text="결제용 키오스크에 QR코드를 찍고 결제를 진행해주세요"
         android:gravity="center" />
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="250dp">
-
-        <LinearLayout
-            android:id="@+id/containerLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center" />
-
-            <!-- 동적으로 컴포넌트들을 이곳에 추가 -->
-        </LinearLayout>
-    </ScrollView>
-
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Total: 0 won"
@@ -57,7 +37,7 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:text="결제" />
+        android:text="취소" />
 
     <Button
         android:id="@+id/button2"
